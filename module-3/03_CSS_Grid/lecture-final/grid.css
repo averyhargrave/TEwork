@@ -1,0 +1,52 @@
+/* this style sheet contains styling for grid components on page */
+
+/* Set the column widths for the grid  for the div with the class container, which is the entire body   */
+
+.container {  /* style all elements with class="container"  */
+    display: grid;       /* use the grid layout to display the elements   */
+
+    /* Using fractional units, the browser will determine the width of each column based on the viewscreen (browser window) */
+    /*                         so YOU don't have to calculate actual size
+    /* Define 3-columns in the grid where the first and last are the same size and the middle is three times the first & last  */
+    grid-template-columns: 1fr 3fr 1fr   ; /* define the number and width of the columns in the grid               */
+    
+    grid-template-areas :                  /* define rows and the names for content of the cells in the grid       */ 
+    "header    header  header"             /* first row all columns will be combined and called header             */
+    "menu-nav  main    upcoming-events"    /* second row will name each column something different                 */
+    "footer    footer  footer"             /* third row a;; columns are combined and called footer                 */                
+    ;
+    grid-gap: 10px;   /* set equal size gaps between the rows and columns in the grid */
+
+    height: 100vh;    /* we want the container class (body) to fill 100% of viewport (screen) height */
+}
+ /* assign html components to the grid                 */
+ header {              
+    grid-area: header;  /* assign the header element to the column(s) named header in the grid           */ 
+}
+nav#menu-nav {
+    grid-area: menu-nav;  /* assign the nav element with the id="menu-nav" to the column(s) named menu-nav in the grid           */
+}
+main {
+    grid-area: main;  /* assign the main element to the column(s) named main in the grid           */
+}
+aside {
+    grid-area: upcoming-events;  /* assign aside element to the column(s) named upcoming events in the grid           */
+}
+footer {
+    grid-area: footer;  /* assign the footer element to the column(s) name footer in the grid           */
+}
+
+/* Add responsive design to the page */
+@media screen and (max-width: 768px) {  /* apply this styling to screens with max width of 768px  */
+.container { /* restyle any elements with class="container" */
+    grid-template-areas:   /* redefine the grid areas on the screen to display horizontally  */
+    "header"
+    "menu-nav"
+    "main"
+    "upcoming-events"
+    "footer"
+    ;
+ 
+    grid-template-columns : 1fr;  /* define a one column grid */
+}
+}

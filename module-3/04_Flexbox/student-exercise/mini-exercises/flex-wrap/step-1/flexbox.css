@@ -1,0 +1,7 @@
+body div {
+    display: flex;
+}
+
+body div {
+    flex-wrap: wrap;
+}

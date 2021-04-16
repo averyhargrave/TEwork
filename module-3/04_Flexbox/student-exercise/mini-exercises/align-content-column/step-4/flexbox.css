@@ -1,0 +1,9 @@
+body div {
+    display: flex;
+}
+
+body div {
+    align-items: center;
+    justify-items: center; 
+    justify-content: space-around;
+}

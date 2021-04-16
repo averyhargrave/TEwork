@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: rgba(192, 192, 192, 0.1);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+aside {
+  position: fixed;
+  width: 200px;
+  border-right: 1px solid rgba(0,173,238,0.4);
+  height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+aside > img {
+  height: 120px;
+  display: block;
+  margin: 0 auto;
+}
+
+main {
+  margin-left: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+li {
+  list-style: none;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0,173,238,0.4);
+  margin: 10px auto;
+  padding-bottom: 10px;
+  width: 80%;
+  line-height: 2;
+}
+
+li > a {
+  font-weight: bold;
+  color:rgba(0,173,238,0.4);
+  text-decoration: none;
+}
+
+li > a:hover {
+  text-decoration: underline;
+}
+
+header {
+  height: 120px;
+}
+
+header > img {
+  height: 80%;
+}
+
+img.banner {
+  display: block;
+  width: 100%;
+}
+
+section > div {
+  display: inline-block;
+  width: 33%;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+
+div > h2 {
+  color: rgba(170, 239, 135, 0.8);
+}
+
+h2 > i {
+  margin-right: 10px;
+}
+
+div:not(div#contact-us) {
+  border-right: 1px solid rgba(170, 239, 135, 0.8);
+}
+
+div:not(div#what-we-do) {
+  padding-left: 20px;
+}

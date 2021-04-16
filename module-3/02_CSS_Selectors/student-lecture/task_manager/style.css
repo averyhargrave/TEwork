@@ -1,0 +1,72 @@
+/* Style for the overall page */
+html { /* specify styling rules for the entire HTML document */
+    height: 100%; /* we want the document to fill the full height of what it's in */
+    font-size: 16px; /* set the default font-size on the page */
+}
+
+* { /* specify styling rules for any element in the document */
+    box-sizing: border-box; /* include the margins and border in the box size - easier placement */
+}
+
+
+/* Style for the body (all of the displayed content) of the document */
+body {
+    font-family: "Raleway", sans-serif; /* tell the browser to use Raleway font if available, otherwise use any sans-serif font */
+    background-image: linear-gradient(to bottom, rgb(48, 182, 245), rgb(190, 237, 253)); /* make background a color that gets lighter as we move down the pge */
+    background-repeat: no-repeat; /* do not repeat the background - stretch to fill the page */
+    background-attachment: fixed; /* do not scroll the background */
+}
+
+div.trello-list { /* style the div with the class="trello-list" (.trello-list indicates a class called trello-list)*/
+    display: inline-block; /* create a multi-column display */
+    width: 300px; /* make the columns fixed size */
+    background-color:rgb(240, 246, 255); /* set the background color of these columns */
+    border-radius: 4px 4px;
+}
+
+div.trello-list h2 { /* style the h2 elements of the div.trello-list class elements */
+    margin: 8px; /* move it over from the edge */
+    font-size: 1rem; /* keep the font-size consistent with the document font */
+    font-weight: bold; /* bold the text */
+}
+
+div.trello-list ol { /* style the ordered list in the div with the class trello-list */
+    margin: 0; /* remove spacing of the list items */
+    padding: 0; /* remove space within the box */
+}
+
+div.trello-list li { /* style the list items in the div with the class trello-list */
+    list-style: none; /* remove the numbering of the items in the list */
+    background-color:rgb(250, 254, 255); /* set the background color to white */
+    font-size: .9rem; /* set the font-size to be slightly smaller than the heading */
+    border-radius: 1px; /* slightly round the edges */
+    margin-bottom: 10px; /* set a margin at the bottom to space items */
+    padding: 8px; /* put some space around the content */
+}
+
+div.trello-list li:hover {
+    background-color:skyblue;
+    color: #08283a;
+}
+
+body { /* style all elements in the body - since we styled the body earlier, this will override same element styling */
+    white-space: nowrap; /* don't wrap the elements onto a new line if they don't all fit - add a scroll bar */
+}
+
+div.trello-list { /* another example of cascading, since we are styling these elements again */
+    vertical-align: top;
+}
+
+header > h1, header > p { /* style all the h1 and p child elements in the header */
+    display: inline-block;
+    height: 20px; 
+    padding-right: 20px;
+    vertical-align: middle;
+    color: white;
+    border-right:1px solid white;
+}
+
+header > h1 {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}

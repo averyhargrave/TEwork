@@ -1,0 +1,32 @@
+table, th, tr, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+}
+
+img {
+    height: 360px;
+}
+
+h1 {
+    text-align: center;
+    color:rgb(92, 20, 35);
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+header, body {
+    font-family:Verdana, Tahoma, sans-serif;
+}
+
+body {
+    background-color:rgba(129, 45, 62, 0.397);
+}
+
+form, div {
+    line-height: 50px;
+}

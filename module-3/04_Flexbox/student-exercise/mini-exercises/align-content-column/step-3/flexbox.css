@@ -1,0 +1,7 @@
+body div {
+    display: flex;
+}
+
+body div {
+    align-items: flex-start;
+}

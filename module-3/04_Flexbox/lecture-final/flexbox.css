@@ -1,0 +1,38 @@
+body,
+#hero footer,
+#featured section,
+#featured section article div,
+#all-items section,
+#all-items section article {
+    display: flex;     /* use flexbox layout for all the elements listed above */
+}
+body,
+#all-items section {
+    flex-direction: column;  /* make columns in the flexbox for the above  */
+}
+/* center the content horizontally */
+body {   /* all visible content */
+    align-items: center;
+}
+#featured section article div {
+    justify-content: center;
+}
+#all-items section article {
+    justify-content: center;
+}
+/* center the content vertically */
+#hero footer {
+    align-items: center;
+}
+#all-items section article {
+    align-items: center;
+}
+#hero footer {
+    justify-content:space-between;
+}
+#all-items article div:last-child { /* style the last div child in each article of #all-items */
+    flex-basis: 80%;  /* flex-basis - style relative to the  previous element - 80% the size */
+}
+#all-items article:nth-child(even) div:first-child { /* style every other article child's first div in #all-items element */
+    order: 2; /* assign the first div child in even  articles of #all-items position # 2 */
+}

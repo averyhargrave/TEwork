@@ -1,0 +1,94 @@
+main#main-grid {
+    display : grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas :
+    "headline headline student-picture"
+    "student-quote student-quote student-picture"
+    "student-profile student-profile student-contact"
+    "experience experience experience"
+    ;
+    grid-row-gap : 20px;
+    grid-column-gap : 50px;
+}
+#headline {
+    grid-area : headline;
+}
+#student-picture {
+    grid-area : student-picture;
+    justify-self: center;
+}
+#student-quote {
+    grid-area : student-quote;
+}
+#student-profile {
+    grid-area : student-profile;
+}
+#student-contact {
+    grid-area : student-contact;
+    justify-self: center;
+    align-self: center;
+}
+div#experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap: 20px 50px;
+    grid-template-areas: 
+    "experience-code experience-code"
+    "experience-database experience-database"
+    "experience-design experience-web"
+    ;
+    grid-area: experience;
+}
+#experience-code {
+    grid-area: experience-code;
+}
+#experience-database {
+    grid-area: experience-database;
+}
+#experience-web {
+    grid-area: experience-web;
+}
+#experience-design {
+    grid-area: experience-design;
+}
+@media screen and (max-width: 1024px) {
+    main#main-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "headline headline"
+        "student-quote student-picture"
+        "student-quote student-contact"
+        "student-profile student-profile"
+        "experience experience"
+        ;
+    }
+}
+div#experience-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "experience-code experience-web"
+    "experience-database experience-design "
+    ;
+}
+@media screen and (max-width: 450px) {
+    main#main-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "headline"
+        "student-quote"
+        "student-picture"
+        "student-contact"
+        "student-profile"
+        "experience experience"
+        ;
+    }
+}
+div#experience-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "experience-code"
+    "experience-web"
+    "experience-database"
+    "experience-design"
+    ;
+}

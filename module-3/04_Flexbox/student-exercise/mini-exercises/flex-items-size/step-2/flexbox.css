@@ -1,0 +1,7 @@
+body div {
+    display: flex;
+}
+
+div:nth-child(even) {
+    flex-grow: 2;
+}

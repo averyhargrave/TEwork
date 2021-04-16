@@ -1,0 +1,204 @@
+/* These are our colors for the page */
+:root {   /* :root refers to the entire document - not just <html>-</html> - global styling */
+   /* --name creates a css variable that can be used in the css to ensure common values throughout */
+   /* like a final/constant/public variable in Java - shared throughout the file                   */
+
+   /* Define variables for the colors used on page - consistent colors throughout and 
+       we can simply change teh variable value to change the color                                 */
+   /* green */
+   --primary-color: rgba(156, 205, 80, 1.0); 
+   --primary-color-border: rgba(156, 205, 80, 0.7);
+   /* blue */
+   --secondary-color: rgba(129, 203, 207, 1);
+   /* white */
+   --tertiary-color: rgb(255, 255, 255);
+   --tertiary-color-border: rgba(255, 255, 255, 0.6);   
+   --text-color: rgba(30, 31, 33, .9);   
+   --blue: rgba(129, 200, 225, 1);
+}
+
+/* Controls the default size and font for our page elements */
+* {
+   box-sizing: border-box;
+   font-family: "Roboto Slab", serif;
+}
+
+nav ul {
+   margin: 0;
+   padding: 0;
+}
+
+/* Limits the size of our leprauchaun image to the container */
+section#order-now img {
+   width: 100%;
+}
+
+
+/* Zooms the image to retain aspect ratio. This is OK if the image 
+   is repetitive like four-leaf clovers 
+*/
+main img {
+   object-fit: cover; /* Keep the aspect ratio of the picture - don't scrunch it up or expand it - regardless of the size on page */
+                      /* Scale the image to fit in it's area and cover entire area */
+}
+
+/* Changes the default styling for hyperlinks */
+a {
+   color: var(--text-color); /* use the value in the variable --text-color */
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: underline;
+}
+
+/* Used to center an item */
+.center {
+   display: block;
+   margin: 0 auto;
+}
+
+/*
+   Add a 🍀 for the <li> in the <main>
+*/
+main li:before {
+   content: '🍀';     /* use a special symbol as content - rather than words */
+   margin-left: -31px;
+   padding-right: 8px;
+}
+
+
+/* 
+   <header> styles  
+*/
+
+header img {
+   height: 100px;
+   width: auto;
+}
+
+/*
+   <img> in <main> styles
+*/
+
+main img {
+   height: 350px;
+   width: 35%;
+}
+
+/***************************************************/
+/* This is where the lecture coding started        */
+/***************************************************/
+
+/* style the body - general overall look and feel for the page */
+body {
+   background-color: var(--secondary-color);  
+}
+
+/* Define the grid containing for 6 columns where the middle 4 are twice the width of the first and last */
+body {
+   display: grid;   /* use the grid layout for the display */
+   grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+   grid-template-areas:   /* define rows and assign names to the columns in the row */
+   ". header      nav         nav     nav   ."
+   ". main        main        main    main  ."
+   ". order-now   order-now   store   store ."
+   ;
+   grid-gap: 6px;
+} 
+/* assign elements to the grid area rows and columns           */
+header {               /* assign header element to a grid area */
+   grid-area: header;
+}
+nav {                  /* assign nav element to a grid area */
+   grid-area: nav;
+}
+main {                 /* assign main element to a grid area */
+   grid-area: main;
+}
+#order-now {           /* assign the element with the id="order-now" to a grid area */
+                       /* could have used the selector section#order-now too        */ 
+   grid-area: order-now;
+}
+#store {                  /* assign the element with id="store" to a grid area */
+                          /* could have used the selector section#store too        */
+   grid-area: store;
+}
+
+/* style the nav element to stop being an ordered list with bullet points           */
+/*     and go across the page and look like buttons                                 */
+nav ul {  /* style the ul child of the nav element                                  */
+    display: flex;        /* style the grid cell with the nav as row                */
+    flex-direction: row;  /* make the content display as a row instead of column    */
+    justify-content: space-between ;  /* put space between the items                */ 
+    align-items: flex-end; 
+   }
+
+/* style each individual list item   */
+/*   remove bullet points            */
+/*   make it look like a button      */
+/*   center the text in the button   */
+nav ul li {   /* style the li child of a ul that is a child of a nav    */
+   /* Layout  */
+  list-style: none;   /* remove the bullet points */
+  width: calc(100% / 6);  /* width to be the same for all items regards of viewport size */
+
+  /* make it look like a button       */
+  background-color: var(--primary-color);  /* set the button background color          */
+  line-height: 50px;                       /* set the button height                    */
+  border-radius: 5px;                      /* slightly round the corners of the button */
+  text-align: center;                      /* center the text in the li container      */
+}
+
+/* Style the text on the buttons */
+/* convert to uppercase and bold */
+nav li a {  /* style at a tag that's a child of a li tag that's a child of a nav */
+   text-transform: uppercase;   /* capitalize teh text   */
+   font-weight: bold;
+}
+
+/* align the buttons to the bottom of the container  */
+nav {
+   align-self: end;  /* override the flex default alignment for each individual item */
+}
+
+/* style the main element (second row of page) */
+main {
+   display: flex;
+   flex-direction: row;  /* change the default display from column to row */
+   background-color: var(--tertiary-color);
+}
+main img {
+margin: 10px;
+}
+
+
+
+/*
+   Styles for #store <h3>
+   - center the text
+*/
+
+section#store h3 {
+   text-align: center;
+}
+
+/*
+   Styles for .store-button
+   - restrict width to 25%
+   - pad around the text
+   - round the borders
+   - set the text color and background color
+   - center the text and uppercase it
+*/
+.store-button {
+   width: 25%;
+   padding: 10px;
+   border-radius: 5px;
+
+   color: var(--text-color);
+   background-color: var(--primary-color);
+
+   text-align: center;
+   text-transform: uppercase;
+}

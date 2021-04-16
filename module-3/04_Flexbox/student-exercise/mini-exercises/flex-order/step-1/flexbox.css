@@ -1,0 +1,11 @@
+body div {
+    display: flex;
+}
+
+.about {
+    flex-direction: column;
+}
+
+.bio:nth-child(2) img {
+    order: 2;
+}

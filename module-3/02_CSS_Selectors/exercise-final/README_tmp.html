@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	/* color: #eab700; */
+	color:brown;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: blue; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="css-selectors-exercise">CSS Selectors Exercise</h1>
+<p>In this exercise, you'll take the existing HTML in <code>index.html</code>, and use CSS to create a layout that reproduces what's shown in the below image. You'll create the CSS for the page in <code>style.css</code>. You shouldn't modify any of the existing HTML to complete this exercise.</p>
+<p><img src="file:///c:/Users/Student/Cohort-Stuff/Cohort-16/Repo-Push-2-Students/java-main/module-3/02_CSS_Selectors/exercise-final/screenshots/layout.png" alt="Layout Image"></p>
+<h2 id="before-you-begin">Before you begin</h2>
+<p>Take a moment to explore the HTML file and its structure. Take note of the <code>&lt;aside&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> blocks, and how the element tags relate to the content in them. Notice how without any styling, all the blocks &quot;flow&quot; from top to bottom in the same order in the rendered HTML.</p>
+<p>Make sure to look at the existing CSS in <code>style.css</code> that was set up for you. Take note of the <code>*</code>, <code>html</code>, and <code>body</code> selectors and how the styles set a &quot;default&quot; value for properties like font size and background color.</p>
+<p>Here are some design decisions to be aware of:</p>
+<ul>
+<li>The sidebar width is 200px.</li>
+<li>The top row (logo and heading) is 150px tall.</li>
+<li>Only the content on the right scrolls if the page is longer than the viewport.</li>
+<li>The colors used are:
+<ul>
+<li>Blue: #00ADEE</li>
+<li>Blue Border: rgba(0, 173, 238, 0.4)</li>
+<li>Green: #8CC36F</li>
+<li>Green Border: rgba(170, 239, 135, 0.8)</li>
+</ul>
+</li>
+</ul>
+<h2 id="step-one-style-aside">Step One: Style <code>aside</code></h2>
+<p>In semantic HTML, element tags like <code>&lt;aside&gt;</code> and <code>&lt;nav&gt;</code> define the content that is contained in the tags. <code>&lt;aside&gt;</code> elements are meant for sidebars, and <code>&lt;nav&gt;</code> elements are meant for navigation. Since the <code>&lt;aside&gt;</code> comes first in the HTML, you'll style this first.</p>
+<p>The <code>aside</code> needs to be set to a <code>fixed</code> position and have a 200px width. Add a right border to the <code>aside</code> that is 1px, solid, and uses the &quot;Blue Border&quot; color from above. Also, add a height of <code>100vh</code> so that the border goes all the way to the bottom of the viewport. Add left and right padding of 20px for spacing.</p>
+<p>Next, set the <code>img</code> in the <code>aside</code> to have a 120px height and to be a <code>block</code> element. Then set <code>margin: 0 auto;</code>. This creates centered content. Be specific with the <code>img</code> selector so it doesn't affect the other images on the page.</p>
+<p>Finally, set the <code>main</code> block to have a 200px left margin so it doesn't overlap with the <code>aside</code>.</p>
+<p>After this step, your page looks like this:</p>
+<p><img src="file:///c:/Users/Student/Cohort-Stuff/Cohort-16/Repo-Push-2-Students/java-main/module-3/02_CSS_Selectors/exercise-final/screenshots/step1.png" alt="After Step 1"></p>
+<h2 id="step-two-style-nav">Step Two: Style <code>nav</code></h2>
+<p>Create a CSS rule that selects the <code>li</code> elements in the <code>aside</code>. Set the <code>list-style</code> property to none, <code>text-align</code> to center, and <code>text-transform</code> to uppercase. Add a solid 1px bottom border using the same &quot;Blue Border&quot; color from above.</p>
+<p>Next, set <code>margin</code> to <code>10px auto</code>. This is shorthand for setting the top and bottom margins to 10px and the left and right margins to auto. Auto helps to keep content centered.</p>
+<p>Add a bottom padding of 10px so the links are vertically centered between the lines, and set a width of 80% so the border lines don't go from edge to edge.</p>
+<p>Then, add a <code>line-height</code> of 2. This creates more spacing between the links and lines.</p>
+<p>Finally, add a new rule that selects the <code>a</code> elements in the <code>li</code>s. Bold the text and set the color to the &quot;Blue&quot; color from above. Also, set the <code>text-decoration</code> to none. You can create another rule that selects the <code>:hover</code> pseudo-class of the <code>a</code> elements, and set the <code>text-decoration</code> property to underline so the links are underlined when you hover over them.</p>
+<p>After this step, your page looks like this:</p>
+<p><img src="file:///c:/Users/Student/Cohort-Stuff/Cohort-16/Repo-Push-2-Students/java-main/module-3/02_CSS_Selectors/exercise-final/screenshots/step2.png" alt="After Step 2"></p>
+<h2 id="step-three-style-header">Step Three: Style <code>header</code></h2>
+<p>In semantic HTML, the <code>&lt;main&gt;</code> element contains the main content of a webpage. The <code>&lt;header&gt;</code> element might contain introductory content or navigation for that page. In this webpage, the <code>header</code> displays the logo and banner.</p>
+<p>The header logo is a bit large. To change this, set the height for the <code>header</code> to be 120px and the <code>img</code> to be 80%. Be specific with the selector for the image so it only affects the header image.</p>
+<p>Next, the 2400x800 banner image needs some styling so it doesn't go over the edge of the page. Make it a block element with 100% width. Be specific with the selector so it doesn't affect the <code>img</code> in the header section.</p>
+<blockquote>
+<p>Hint: the banner image has a <code>class</code> attribute.</p>
+</blockquote>
+<p>The <code>main</code> content block is against the border of the <code>aside</code>. Go back to the rule that you created for the <code>main</code> block in step one, and add a left and right padding of 20px each.</p>
+<p>Now, your page looks like this:</p>
+<p><img src="file:///c:/Users/Student/Cohort-Stuff/Cohort-16/Repo-Push-2-Students/java-main/module-3/02_CSS_Selectors/exercise-final/screenshots/step3.png" alt="After Step 3"></p>
+<h2 id="step-four-style-section">Step Four: Style <code>section</code></h2>
+<p>The &quot;What We Do&quot;, &quot;Our Work&quot;, and &quot;Contact Us&quot; sections are still stacked on top of each other, but they need to be side by side. Create a CSS rule to select the <code>div</code>s in the <code>section</code> element. Make them display as inline-blocks with a width of 33%. Give each one a right padding and top margin of 20px each so there's some space in between.</p>
+<p>Then, create a rule that selects the <code>h2</code> in the <code>section</code> element, and set the color to the &quot;Green&quot; color above. Create another rule that selects the <code>i</code> element in <code>h2</code>, and set a right margin of 10px.</p>
+<p>Next, you need to create two more rules: one that creates the green border between the sections, and one that adds left padding. Create a rule that selects the first two <code>div</code>s by their IDs. Add a right border using the &quot;Green Border&quot; color from above that is solid and 1px. Create another rule that selects the second two <code>div</code>s by their IDs, and add a left padding of 20px.</p>
+<blockquote>
+<p>For &quot;extra credit&quot;, the last two CSS rules can be done with the <code>:not</code> and <code>:first-child</code>/<code>:last-child</code> pseudo-classes. If you want to attempt the extra credit, look up how to use them and then replace the selectors with these pseudo-classes.</p>
+</blockquote>
+<p>Your page should now look like the screenshot from the beginning of the exercise:</p>
+<p><img src="file:///c:/Users/Student/Cohort-Stuff/Cohort-16/Repo-Push-2-Students/java-main/module-3/02_CSS_Selectors/exercise-final/screenshots/step4.png" alt="After Step 4"></p>
+
+</body>
+</html>
